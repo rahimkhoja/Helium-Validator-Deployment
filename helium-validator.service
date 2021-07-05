@@ -11,8 +11,8 @@ TimeoutStartSec=30
 Restart=always
 ExecStartPre=-/usr/bin/docker exec validator stop
 ExecStartPre=-/usr/bin/docker rm validator
-ExecStartPre=/usr/bin/docker pull quay.io/team-helium/validator:latest-val-amd64
-ExecStart=/usr/bin/docker run --init --restart always --publish 2154:2154/tcp --name validator -e "NAT_EXTERNAL_IP=66.196.34.103" --mount type=bind,source=/var/lib/validator,target=/var/data quay.io/team-helium/validator:latest-val-amd64
+ExecStartPre=/usr/bin/docker pull quay.io/team-helium/validator:latest-validator-amd64
+ExecStart=/usr/bin/docker run -d --init --restart always --publish 2154:2154/tcp --publish 8080:8080/tcp --name validator -e "NAT_INTERNAL_IP=172.105.4.139" --mount type=bind,source=/var/lib/validator,target=/var/data quay.io/team-helium/validator:latest-validator-amd64
 ExecStop=/usr/bin/docker stop -t 10 validator
 
 [Install]
