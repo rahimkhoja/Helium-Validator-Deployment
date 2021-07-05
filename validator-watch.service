@@ -1,0 +1,14 @@
+# HNT Validator Monitor Service
+
+[Unit]
+Description=Helium Validator Monitor. Logs Helium Validator Information to Telegram
+Wants=validator-watch.timer
+
+[Service]
+Type=oneshot
+ExecStart=/usr/share/hnt-telegram/validator-alert.sh  
+User=rkhoja
+Group=rkhoja
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,168 @@
+    1  ls /dev/sd*
+    2  mkfs.ext4 /dev/sdb
+    3  ls /var
+    4  mkdir /mnt/sdb
+    5  mount /dev/sdb /mnt/sdb
+    6  ls
+    7  sudo rsync -raX /var/ /mnt/sdb/
+    8  ls /mnt/sdb/
+    9  vi /etc/fstab 
+   10  fdisk -p /dev/sdb
+   11  fdisk /dev/sdb -l
+   12  sudo rsync -raX /var/log /mnt/sdd/
+   13  poweroff
+   14  exit
+   15  cd /tmp
+   16  ls
+   17  cat commands.txt 
+   18  hostnamectl set-hostname vortep-validator
+   19  cat commands1.txt 
+   20  cat commands1.txt | grep chown
+   21  cat commands1.txt | grep ch
+   22  cat commands.txt | grep ch
+   23  chmod -R w+g /var/lib/validator
+   24  chmod -R 777 /var/lib/validator
+   25  docker run --init --restart always --publish 2154:2154/tcp --name validator --mount type=bind,source="/var/lib/validator",target=/var/data quay.io/team-helium/validator:latest-val-amd64
+   26  systemctl enabler docker
+   27  systemctl enable docker
+   28  systemctl start docker
+   29  docker run --init --restart always --publish 2154:2154/tcp --name validator --mount type=bind,source="/var/lib/validator",target=/var/data quay.io/team-helium/validator:latest-val-amd64
+   30  df -h
+   31  docker run --init --restart always --publish 2154:2154/tcp --name validator --mount type=bind,source="/var/lib/validator",target=/var/data quay.io/team-helium/validator:latest-val-amd64
+   32  cat commands.txt | grep docker
+   33  /usr/bin/docker container ls
+   34  docker run --init --restart always --publish 2154:2154/tcp --name validator --mount type=bind,source="/var/lib/validator",target=/var/data quay.io/team-helium/validator:latest-val-amd64
+   35  docker container ls
+   36  docker
+   37  service docker stop
+   38  service docker start
+   39  docker run --init --restart always --publish 2154:2154/tcp --name validator --mount type=bind,source="/var/lib/validator",target=/var/data quay.io/team-helium/validator:latest-val-amd64
+   40  cat commands.txt | grep docker
+   41  ls
+   42  cat helium-validator.service 
+   43  /usr/bin/docker run --init --restart always --publish 2154:2154/tcp --name validator -e "NAT_EXTERNAL_IP=66.196.34.103" --mount type=bind,source=/var/lib/validator,target=/var/data quay.io/team-helium/validator:latest-val-amd64
+   44  docker
+   45  docker stats
+   46  docker
+   47  cat commands.txt | grep docker
+   48  cat commands.txt | grep exec
+   49  cat commands1.txt | grep exec
+   50  docker exec validator miner info summary
+   51  cat commands1.txt | grep exec
+   52  docker exec validator miner info
+   53  docker exec validator miner info name
+   54  docker exec validator miner info summary
+   55  docker image rm validator
+   56  docker image rm
+   57  docker image
+   58  docker image ls
+   59  #docker run -d --init \
+   60  --restart always --publish 2154:2154/tcp --publish 8080:8080/tcp --name validator --mount type=bind,source=$HOME/validator_data,target=/var/data quay.io/team-helium/validator:latest-validator-amd64
+   61  docker image latest-val-amd64rm 
+   62  docker image rm f34af3c7cea4
+   63  docker stop 
+   64  docker stop validator
+   65  docker run -d --init --restart always --publish 2154:2154/tcp --publish 8080:8080/tcp --name validator --mount type=bind,source=$HOME/validator_data,target=/var/data quay.io/team-helium/validator:latest-validator-amd64
+   66  docker run -d --init --restart always --publish 2154:2154/tcp --publish 8080:8080/tcp --name validator --mount type=bind,source=/var/lib/validator,target=/var/data quay.io/team-helium/validator:latest-validator-amd64
+   67  docker 
+   68  docker image
+   69  docker image ls
+   70  docker image rm f34af3c7cea4
+   71  docker rm
+   72  docker rm f34af3c7cea4
+   73  docker ls
+   74  docker 
+   75  docker info
+   76  df
+   77  df -h
+   78  docker info
+   79  docker
+   80  docker container
+   81  docker container ls
+   82  docker container prune
+   83  docker info
+   84  df -h
+   85  docker exec validator miner info summary
+   86  docker run -d --init --restart always --publish 2154:2154/tcp --publish 8080:8080/tcp --name validator --mount type=bind,source=/var/lib/validator,target=/var/data quay.io/team-helium/validator:latest-validator-amd64
+   87  docker exec validator miner info summary
+   88  system ufw stop
+   89  service ufw stop
+   90  docker exec validator miner info summary
+   91  docker stop all
+   92  docker stop 
+   93  docker images
+   94  docker images rm f34af3c7cea4
+   95  docker images rm 
+   96  docker images 
+   97  docker 
+   98  docker rm
+   99  docker rm validator
+  100  docker stop validator
+  101  docker rm validator
+  102  docker info
+  103  docker images
+  104  docker images rm f34af3c7cea4
+  105  docker images rm 
+  106  docker rm images 
+  107  docker rm f34af3c7cea4
+  108  docker 
+  109  docker rmi f34af3c7cea4
+  110  docker rmi bd52992d672d
+  111  docker run -d --init --restart always --publish 2154:2154/tcp --publish 8080:8080/tcp --name validator --mount type=bind,source=/var/lib/validator,target=/var/data quay.io/team-helium/validator:latest-validator-amd64
+  112  docker exec validator miner info summary
+  113  docker exec validator miner info 
+  114  docker exec validator miner
+  115  docker exec validator miner status
+  116  docker exec validator 
+  117  docker exec validator miner info height
+  118  df -h
+  119  ufw allow ssh
+  120  ufw allow 8080
+  121  ufw allow 2154
+  122  ufw status
+  123  ufw show
+  124  ufw show status
+  125  ufw status
+  126  ufw status verbose
+  127  ufw default allow outgoing
+  128  ufw default deny incoming
+  129  ufw allow ssh
+  130  ufw allow 8080
+  131  ufw allow 2154
+  132  ufw status verbose
+  133  service ufw start
+  134  ufw status verbose
+  135  sudo ufw enable
+  136  ufw status verbose
+  137  docker exec validator miner status
+  138  docker exec validator miner info height
+  139  docker exec validator miner info 
+  140  docker exec validator miner info summary
+  141  df -h
+  142  docker stop validator
+  143  ip addr
+  144  -e "NAT_INTERNAL_IP=172.105.4.139"
+  145  docker run -d --init --restart always --publish 2154:2154/tcp --publish 8080:8080/tcp --name validator --mount type=bind,source=/var/lib/validator,target=/var/data quay.io/team-helium/validator:latest-validator-amd64docker run -d --init --restart always --publish 2154:2154/tcp --publish 8080:8080/tcp --name validator -e "NAT_INTERNAL_IP=172.105.4.139"
+  146  --mount type=bind,source=/var/lib/validator,target=/var/data quay.io/team-helium/validator:latest-validator-amd64docker run -d --init --restart always --publish 2154:2154/tcp --publish 8080:8080/tcp --name validator -e "NAT_INTERNAL_IP=172.105.4.139"
+  147  --mount type=bind,source=/var/lib/validator,target=/var/data \
+  148  docker run -d --init --restart always --publish 2154:2154/tcp --publish 8080:8080/tcp --name validator -e "NAT_INTERNAL_IP=172.105.4.139"
+  149  --mount type=bind,source=/var/lib/validator,target=/var/data quay.io/team-helium/validator:latest-validator-amd64
+  150  docker run -d --init --restart always --publish 2154:2154/tcp --publish 8080:8080/tcp --name validator -e "NAT_INTERNAL_IP=172.105.4.139" --mount type=bind,source=/var/lib/validator,target=/var/data quay.io/team-helium/validator:latest-validator-amd64
+  151  docker images ls
+  152  docker rmi
+  153  docker prune
+  154  docker images prune
+  155  docker stop validator && docker rm validator
+  156  docker image prune -f
+  157  docker run -d --init --restart always --publish 2154:2154/tcp --publish 8080:8080/tcp --name validator -e "NAT_INTERNAL_IP=172.105.4.139" --mount type=bind,source=/var/lib/validator,target=/var/data quay.io/team-helium/validator:latest-validator-amd64
+  158  docker exec validator miner info summary
+  159  df -h
+  160  docker exec validator miner info summary
+  161  ip addr
+  162  df -h
+  163  cd /tmp
+  164  git
+  165  git clone https://github.com/rahimkhoja/Helium-Validator-Deployment.git
+  166  cd Helium-Validator-Deployment/
+  167  history > ./ commands.txt
+  168  history > ./commands.txt

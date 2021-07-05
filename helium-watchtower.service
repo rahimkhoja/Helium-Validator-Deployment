@@ -1,0 +1,19 @@
+[Unit]
+Description=helium-watchtower Service
+After=docker.service
+Wants=network-online.target docker.socket
+Requires=docker.socket
+ 
+[Service]
+User=root
+Group=root
+TimeoutStartSec=0
+Restart=always
+ExecStartPre=-/usr/bin/docker exec watchtower stop
+ExecStartPre=-/usr/bin/docker rm watchtower
+ExecStartPre=/usr/bin/docker pull containrrr/watchtower
+ExecStart=/usr/bin/docker run --restart always --name watchtower -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --cleanup --interval 1800
+ExecStop=/usr/bin/docker stop -t 10 watchtower
+
+[Install]
+WantedBy=default.target
