@@ -9,11 +9,10 @@ User=root
 Group=root
 TimeoutStartSec=0
 Restart=always
-ExecStartPre=-/usr/bin/docker exec watchtower stop
-ExecStartPre=-/usr/bin/docker rm watchtower
-ExecStartPre=/usr/bin/docker pull containrrr/watchtower
-ExecStart=/usr/bin/docker run --restart always --name watchtower -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --cleanup --interval 1800
-ExecStop=/usr/bin/docker stop -t 10 watchtower
+ExecStartPre=-/usr/bin/docker stop validator
+ExecStartPre=-/usr/bin/docker rm validator
+ExecStartPre=/usr/bin/docker pull quay.io/team-helium/validator:latest-validator-amd64
+ExecStart=/usr/bin/docker image prune -f
 
 [Install]
 WantedBy=default.target
